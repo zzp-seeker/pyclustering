@@ -366,7 +366,10 @@ def euclidean_distance_square_numpy(object1, object2):
 
     @return (double) Square Euclidean distance between two objects.
 
-    """
+    """zp
+    object1=numpy.array(object1)
+    object2=numpy.array(object2)
+    
     if len(object1.shape) > 1 or len(object2.shape) > 1:
         return numpy.sum(numpy.square(object1 - object2), axis=1).T
     else:
