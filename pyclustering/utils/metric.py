@@ -326,8 +326,11 @@ def euclidean_distance_numpy(object1, object2):
     @param[in] object2 (array_like): The second array_like object.
 
     @return (double) Euclidean distance between two objects.
-
+    zp
     """
+    object1=numpy.array(object1)
+    object2=numpy.array(object2)
+    
     if len(object1.shape) > 1 or len(object2.shape) > 1:
         return numpy.sqrt(numpy.sum(numpy.square(object1 - object2), axis=1))
     else:
@@ -409,8 +412,10 @@ def manhattan_distance_numpy(object1, object2):
     @param[in] object2 (array_like): The second array_like object.
 
     @return (double) Manhattan distance between two objects.
-
+    zp
     """
+    object1=numpy.array(object1)
+    object2=numpy.array(object2)
     if len(object1.shape) > 1 or len(object2.shape) > 1:
         return numpy.sum(numpy.absolute(object1 - object2), axis=1).T
     else:
@@ -452,8 +457,10 @@ def chebyshev_distance_numpy(object1, object2):
     @param[in] object2 (array_like): The second array_like object.
 
     @return (double) Chebyshev distance between two objects.
-
+    zp
     """
+    object1=numpy.array(object1)
+    object2=numpy.array(object2)
     if len(object1.shape) > 1 or len(object2.shape) > 1:
         return numpy.max(numpy.absolute(object1 - object2), axis=1).T
     else:
@@ -493,8 +500,10 @@ def minkowski_distance_numpy(object1, object2, degree=2):
     @param[in] degree (numeric): Degree of that is used for Minkowski distance.
 
     @return (double) Minkowski distance between two object.
-
+    zp
     """
+    object1=numpy.array(object1)
+    object2=numpy.array(object2)
     if len(object1.shape) > 1 or len(object2.shape) > 1:
         return numpy.power(numpy.sum(numpy.power(object1 - object2, degree), axis=1), 1/degree)
     else:
